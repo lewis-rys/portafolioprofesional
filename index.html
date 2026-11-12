@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="portafolio">
+
+    <!--Contenedor 1: Portada y presentación-->
+    <header class="portada" id="inicio">
+  <img class="portada-foto" src="data/imagendeprueba.jpg" alt="Foto de Luis Reyes">
+
+  <div class="portada-info">
+    <p class="portada-saludo">Hola, soy</p>
+    <h1>Luis Angel Rosario Reyes</h1>
+    <p class="portada-rol">Desarrollador de software</p>
+    <p class="portada-descripcion">
+      Desarrollo software y base de datos para resolver problemas reales, asi como la intalacion y proteccion de sistemas informaticos.
+      Me interesa aprender nuevas tecnologías y crear soluciones útiles,
+      seguras y bien estructuradas.
+    </p>
+
+   <div class="portada-botones">
+  <a class="btn" href="data/cvs/cv.pdf" download="CV_Luis_Angel_Rosario_Reyes.pdf">Descargar CV</a>
+  </div>
+</header>
+
+    <!--Contenedor 2: Formación, experiencia y contacto-->
+    <section class="info">
+
+      <!--Información académica-->
+      <article class="experiencia" id="experiencia">
+        <h2>Formación académica</h2>
+        <ul>
+          <li>Preparatoria Terminada.</li>
+          <li>Licenciatura en Ingeniería en Computacionales en curso.</li>
+          <li>Tecnitura en lenguajes de programacion de medio y alto nivel.</li>
+          <lI>Ingles</lI>
+        </ul>
+      </article>
+
+      <!--Experiencia laboral-->
+      <article class="experiencia" id="experiencia">
+        <h2>Experiencia</h2>
+        <ul>
+          <li>Desarrollo de base de datos relacional para una biblioteca.</li>
+          <li>Desarrollo de software para la resolución de problemáticas sociales y privadas.</li>
+          <li>Instalación de sistemas operativos y programas educativos y de oficina.</li>
+          <li>Instalación de software de seguridad informática.</li>
+        </ul>
+      </article>
+
+      <!--Contacto-->
+      <article class="contacto" id="contacto">
+        <h2>Contacto</h2>
+        <ul class="redes">
+          <li><a href="mailto:lewireyes001@gmail.com"><img src="data/emailicon.png" alt="Email"></a></li>
+          <li><a href="https://github.com/lewis-rys"><img src="data/githubicon.png" alt="GitHub"></a></li>
+          <li><a href="https://www.linkedin.com/in/luis-angel-rosario-reyes-136a6444a"><img src="data/linkedinicon.png" alt="LinkedIn"></a></li>
+          <li><a href="https://facebook.com/lewis.rys2"><img src="data/facebookicon.png" alt="Facebook"></a></li>
+          <li><a href="https://www.instagram.com/lewis_rys"><img src="data/instagramicon.png" alt="Instagram"></a></li>
+          <li><a href="https://vk.ru/lewis_rys"><img src="data/vkicon.png" alt="VK"></a></li>
+        </ul>
+      </article>
+
+    </section><!-- cierre de .info (faltaba) -->
+
+   <!--Contenedor 3: Proyectos principales-->
+<section class="proyectos" id="proyectos">
+  <h2>Proyectos Destacados</h2>
+
+  <!--Proyecto 1-->
+  <article class="proyecto">
+    <h3>SOS365</h3>
+    <p>Aplicacion para generar reportes de emergencia disenada para facilitar la recoleccion de evidencias en situaciones críticas derivada de la inseguridad.</p>
+    <button class="btn-proyecto" type="button" data-abrir="modal-proyecto-1">Ver detalles</button>
+    <dialog class="modal" id="modal-proyecto-1">
+      <button class="modal-cerrar" type="button" aria-label="Cerrar">&times;</button>
+      <h3>SOS365</h3>
+      <h4>Descripción</h4>
+      <p>Una aplicación móvil de seguridad personal diseñada para brindar asistencia rápida en situaciones de emergencia. Permite enviar alertas de auxilio a contactos de confianza, compartiendo información como la ubicación del usuario y archivos multimedia para facilitar su localización y atención.</p>
+      <h4>Mis Aportes</h4>
+      <p>Desarrollo del backend y la integración con los servicios de Google Cloud para el envio de las alertas. Asi como el diseño de base de datos de Mongo para la recopilacion de datos de los usuarios.</p>
+      <h4>Tecnologías</h4>
+      <ul class="tecnologias">
+        <li>Dart</li>
+        <li>Flutter</li>
+        <li>Mongo Atlas</li>
+        <li>Google CloudServices</li>
+      </ul>
+      <br>
+      <div class="galeria">
+        <img src="data/proyectos/sos365/interfaz1.png" alt="Captura 1 del proyecto 1">
+        <img src="data/proyectos/sos365/interfaz3.png" alt="Captura 2 del proyecto 1">
+        <img src="data/proyectos/sos365/interfaz2.png" alt="Captura 3 del proyecto 1">
+        <img src="data/proyectos/sos365/basededatosdiagrama.png" alt="Captura 3 del proyecto 1">
+      </div>
+      <div class="modal-enlaces">
+        <a class="btn" href="https://github.com/lewis-rys/sos365.git">Repositorio</a>
+      </div>
+    </dialog>
+  </article>
+
+<!--Proyecto 2-->
+  <article class="proyecto">
+    <h3>WebMulator-Android</h3>
+    <p>Aplicacion que busca ejecutar APPS que han dejado de dar soporte a dispocitivos con verciones de Andorid Antiguas.</p>
+    <button class="btn-proyecto" type="button" data-abrir="modal-proyecto-2">Ver detalles</button>
+    <dialog class="modal" id="modal-proyecto-2">
+      <button class="modal-cerrar" type="button" aria-label="Cerrar">&times;</button>
+      <h3>WebMulator-Android</h3>
+      <h4>Descripción</h4>
+      <p>Nace de la necesidad de crear una aplicación móvil desarrollada para emular sitios web de aplicaciones Android que han dejado de recibir soporte para dispositivos móviles, permitiendo acceder a sus servicios mediante una interfaz web optimizada. Usando las Funciones nativas de las aplicaciones originales.</p>
+      <h4>Mis Aportes</h4>
+      <p>Optmizacion del software para que pueda ejecutar en Android posteriores a v.10 de manera fluida y comoda</p>
+      <h4>Tecnologías</h4>
+      <ul class="tecnologias">
+        <li>Kotlin</li>
+      </ul>/
+      <br>
+      <div class="galeria">
+        <img src="data/proyectos/webmulator/imagen1.png" alt="Captura 1 del proyecto 1">
+        <img src="data/proyectos/webmulator/imagen2.png" alt="Captura 2 del proyecto 1">
+        <img src="data/proyectos/webmulator/imagen3.png" alt="Captura 3 del proyecto 1">
+      </div>
+      <div class="modal-enlaces">
+        <a class="btn" href="https://github.com/lewis-rys/WebMulator-Android.git">Repositorio</a>
+      </div>
+    </dialog>
+  </article>
+
+<!--Proyecto 3-->
+  <article class="proyecto">
+    <h3>Zerox</h3>
+    <p>Proyecto de desarrollo web que se desarrollo como porte de una campaña de concentizacion lanzada por la SEP.</p>
+    <button class="btn-proyecto" type="button" data-abrir="modal-proyecto-3">Ver detalles</button>
+    <dialog class="modal" id="modal-proyecto-3">
+      <button class="modal-cerrar" type="button" aria-label="Cerrar">&times;</button>
+      <h3>Zerox</h3>
+      <h4>Descripción</h4>
+      <p>Este proyecto nace de la necesidad de implementar la tecnologia para resolver la problematica de desconocimiento de sustancias, Incorporando un modelo basico de IA por chat.</p>
+      <h4>Mis Aportes</h4>
+      <p>Desarrollo y entrenamiento de la IA cuyo objetivo es hablar exclusivamente sobre cierto tipo de sustancias y sus riesgos.</p>
+      <h4>Tecnologías</h4>
+      <ul class="tecnologias">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+      </ul>
+      <div class="galeria">
+        <img src="data/proyectos/zerox/page1.png" alt="Captura 1 del proyecto 1">
+        <img src="data/proyectos/zerox/page2.png" alt="Captura 2 del proyecto 1">
+        <img src="data/proyectos/zerox/page3.png" alt="Captura 3 del proyecto 1">
+        <img src="data/proyectos/zerox/page4.png" alt="Captura 4 del proyecto 1">
+      </div>
+      <div class="modal-enlaces">
+        <a class="btn" href="https://github.com/lewis-rys/Zerox.git">Repositorio</a>
+      </div>
+    </dialog>
+  </article>
+
+
+</section>
+
+    <!--Contenedor 4: Habilidades técnicas-->
+    <aside class="habilidades" id="habilidades">
+      <h2>Habilidades técnicas</h2>
+      <ul>
+        <p>Lenguajes Principales:</p>
+        <li>Java</li>
+        <li>C, C++, C#</li>
+        <li>Kotlin</li>
+        <p>Desarrollo Web:</p>
+        <li>HTML5, CSS3, JavaScript, PHP</li>
+        <p>Desarrollo Multiplataforma:</p>
+        <li>Flutter</li>
+        <p>Base de datos:</p>
+        <li>MySQL</li>
+        <li>Cassandra</li>
+        <li>MongoDB</li>
+        <p>Computación en la nube:</p>
+        <li>Firebase, Google Cloud</li>
+        <p>Herramientas y sistemas operativos:</p>
+        <li>Git, GitHub</li>
+        <li>Inteligencia Artificial</li>
+        <li>Figma</li>
+        <li>Visual Studio Code, Android Studio, MySQL Workbench</li>
+        <li>Contenedores, Maquinas Virtuales</li>
+        <li>Windows, Linux, MacOs</li>
+</ul>
+      </ul>
+    </aside>
+
+  </div>
+
+</body>
+</html>

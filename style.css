@@ -1,0 +1,420 @@
+/*Paleta de colores*/
+:root {
+  --bg-main: #0D1117;
+  --bg-card: #161B22;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --accent-primary: #06B6D4;    /* azul */
+  --accent-secondary: #10B981;  /* verde */
+  --border-color: #30363D;
+  --card-hover: #1C2128;
+}
+
+/*Estilos base del sitio*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Enlaces*/
+a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-primary);
+}
+
+/*Botones*/
+/* Descargar CV */
+.btn {
+  display: inline-block;
+  padding: .5rem 1rem;
+  border: 1px solid var(--accent-secondary);
+  border-radius: 6px;
+  background: var(--accent-secondary);    /* verde */
+  color: var(--bg-main);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.btn:hover {
+  background: var(--accent-primary);      /* azul */
+  border-color: var(--accent-primary);
+  color: var(--bg-main);
+}
+
+/* Ver detalles y Repositorio */
+.btn-proyecto {
+  display: inline-block;
+  padding: .5rem 1rem;
+  border: 1px solid var(--accent-secondary);
+  border-radius: 6px;
+  background: var(--accent-secondary);    /* verde relleno permanente */
+  color: var(--bg-main);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.btn-proyecto:hover {
+  background: var(--accent-primary);      /* azul al pasar el cursor */
+  border-color: var(--accent-primary);
+  color: var(--bg-main);
+}
+
+/*Responsive Principal (Desktop)*/
+.portafolio {
+  display: grid;
+  gap: 1rem;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+
+  grid-template-columns: 2fr 1.2fr 1fr;
+  grid-template-areas:
+    "portada  proyectos habilidades"
+    "info     proyectos habilidades";
+  grid-template-rows: auto 1fr;
+}
+
+/*Asignación de áreas*/
+.portada     { grid-area: portada; }
+.info        { grid-area: info; }
+.proyectos   { grid-area: proyectos; }
+.habilidades { grid-area: habilidades; }
+
+/*Contenedores*/
+.portada,
+.proyectos,
+.habilidades,
+.info > article {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/*Contenedor 1: Portada*/
+.portada {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 200px;
+}
+
+.portada-foto {
+  width: clamp(110px, 18vw, 170px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.portada-saludo {
+  color: var(--text-secondary);
+}
+
+.portada-rol {
+  color: var(--accent-secondary);
+  font-weight: 600;
+  margin-top: .25rem;
+}
+
+.portada-descripcion {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-top: .75rem;
+}
+
+.portada-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+/*Contenedor 2: Información académica, experiencia y contacto*/
+.info {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1.4fr minmax(132px, .7fr);
+}
+
+.info > article {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.info h2,
+.info h3 {
+  color: var(--accent-primary);
+}
+
+.info p {
+  color: var(--text-secondary);
+}
+
+.experiencia ul {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  color: var(--text-secondary);
+}
+
+.redes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+}
+
+.redes img {
+  display: block;
+  width: clamp(28px, 4vw, 44px);
+  height: auto;
+  filter: invert(1);   /* los vuelve blancos */
+  transition: transform .2s;
+}
+
+.redes a:hover img,
+.redes a:focus-visible img {
+  transform: scale(1.15);
+}
+
+/*Contenedor 3: Proyectos principales*/
+.proyectos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.proyectos h2 {
+  color: var(--accent-primary);
+}
+
+/*Tarjeta de proyecto*/
+.proyecto {
+  flex: 1;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-hover);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.proyecto:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-card);
+}
+
+.proyecto p {
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* "Ver detalles" a la derecha de la tarjeta */
+.proyecto .btn-proyecto {
+  align-self: flex-end;
+}
+
+/*Ventana emergente (modal)*/
+.modal {
+  width: min(92vw, 640px);
+  max-height: 90vh;
+  margin: auto;                 /* la centra en la pantalla */
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, .7);
+}
+
+.modal h3 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.modal h4 {
+  color: var(--accent-secondary);
+  margin: 1rem 0 .4rem;
+}
+
+.modal p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: .5rem;
+  right: .75rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-cerrar:hover {
+  color: var(--accent-primary);
+}
+
+/*Galería deslizable tipo Google Play*/
+.galeria {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: .5rem;
+  scrollbar-width: thin;
+}
+
+.galeria img {
+  flex: 0 0 auto; 
+  height: clamp(220px, 45vh, 380px);  
+  width: auto;             /* se asoma un poco la siguiente imagen */
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  scroll-snap-align: center;
+}
+
+/*Tecnologías y enlaces del modal*/
+.tecnologias {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.tecnologias li {
+  padding: .25rem .6rem;
+  border-left: 2px solid var(--accent-secondary);
+  background: var(--card-hover);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+.modal-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.25rem;
+  justify-content: flex-end;    /* "Repositorio" a la derecha */
+}
+
+/*Contenedor 4: Habilidades*/
+.habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.habilidades h2 {
+  color: var(--accent-primary);
+}
+
+.habilidades ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.habilidades li {
+  color: var(--text-secondary);
+  padding: .5rem;
+  border-left: 2px solid var(--accent-secondary);
+  background: var(--card-hover);
+  border-radius: 4px;
+}
+
+/*Responsive Tablet*/
+@media (max-width: 992px) {
+  .portafolio {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "portada    portada"
+      "info       info"
+      "proyectos  habilidades";
+    grid-template-rows: auto;
+  }
+
+  .info {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/*Responsive Móvil*/
+@media (max-width: 640px) {
+  .portafolio {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "portada"
+      "info"
+      "proyectos"
+      "habilidades";
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .portada {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .portada-botones {
+    justify-content: center;
+  }
+}
